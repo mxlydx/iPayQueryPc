@@ -1,6 +1,6 @@
 <template>
 	<div>
-	    <div class="layout">
+	    <div >
         <Layout>
             <Header>
                 <Menu mode="horizontal" theme="light" active-name="1">
@@ -13,19 +13,9 @@
                     </div>
                 </Menu>
             </Header>
-            <Content :style="{padding: '0 50px'}">
-                <Breadcrumb :style="{margin: '20px 0'}">
-                    <BreadcrumbItem>Home</BreadcrumbItem>
-                    <BreadcrumbItem>Components</BreadcrumbItem>
-                    <BreadcrumbItem>Layout</BreadcrumbItem>
-                </Breadcrumb>
-                <Card>
-                    <div style="min-height: 200px;">
-                        Content
-                    </div>
-                </Card>
+            <Content :style="{padding: '50px 50px'}">
             </Content>
-            <Footer class="layout-footer-center">2011-2016 &copy; TalkingData</Footer>
+            <Footer class="layout-footer-center" :style="{margin: '20px 0'}">2017-2018 &copy; 山东微融文化传媒有限公司</Footer>
         </Layout>
     </div>
 	    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -77,5 +67,10 @@
 }
 .ivu-layout-header{
 	background: #FFFFFF;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 9999;
 }
 </style>
