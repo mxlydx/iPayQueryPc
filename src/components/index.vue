@@ -2,19 +2,7 @@
   <div>
     <div>
       <Layout>
-        <Header>
-          <Menu mode="horizontal" theme="light" active-name="1">
-            <div class="layout-logo"></div>
-            <span class="logo-text">
-              <Icon type="logo-designernews" />&nbsp;&nbsp;支付查</span>
-            <div class="layout-nav">
-              <MenuItem>
-                <Icon type="ios-navigate"></Icon>
-                首页
-              </MenuItem>
-            </div>
-          </Menu>
-        </Header>
+        <iHeader></iHeader>
         <div class="clear">
         </div>
         <Content :style="{padding:'70px 50px'}">
@@ -23,11 +11,11 @@
             <button class="select-btn">关键字
               <Icon type="ios-arrow-down" />
             </button><input type="search" class="search-box" />
-            <button class="search-btn">
+            <button class="search-btn" @click="searchK">
               <Icon type="ios-search" />&nbsp;查 一 下
             </button>
           </div>
-          <div class="dropdown-list" ref="xxx">
+          <div class="dropdown-list" >
             <div class="dropdown-list-detail">
               <ul>
                 <li>银行卡BIN</li>|
@@ -47,18 +35,29 @@
             <img src="../assets/active_banner@2x.62a4495.png" />
           </div>
         </Content>
-        <Footer class="layout-footer-center">2017-2018 &copy; 山东微融文化传媒有限公司</Footer>
+        <iFooter></iFooter>
       </Layout>
     </div>
   </div>
 </template>
 <script>
+import header from './common/header.vue';
+import footer from './common/footer.vue';
 export default {
   name: "index",
+  components:{
+      'iHeader':header,
+      'iFooter':footer
+  },
   data() {
     return {
       theme1: "light"
     };
+  },
+  methods:{
+    searchK(){
+
+    }
   }
 };
 </script>
@@ -200,40 +199,5 @@ body {
   font-size: 30px;
   height: 50px;
   margin: 70px 0px 10px 0px;
-}
-.layout-logo {
-  width: 100px;
-  height: 30px;
-  background: #5b6270;
-  border-radius: 3px;
-  float: left;
-  position: relative;
-  top: 15px;
-  color: #fff;
-}
-.logo-text {
-  position: absolute;
-  top: 0px;
-  left: 18px;
-  color: #ffffff;
-}
-.clear {
-  clear: both;
-}
-.layout-nav {
-  width: 420px;
-  margin: 0 auto;
-  margin-right: 20px;
-}
-.layout-footer-center {
-  text-align: center;
-}
-.ivu-layout-header {
-  background: #ffffff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 9999;
 }
 </style>
