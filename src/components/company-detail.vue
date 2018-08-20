@@ -4,7 +4,7 @@
             <iHeader></iHeader>
             <div class="clear">
             </div>
-            <Content :style="{padding:'70px 50px'}">
+            <Content :style="{padding:'70px 70px'}">
                 <div class="info-area">
                     <div class="title">
                         <a href=""><img src="../assets/timg.jpg" class="licenseImg" alt="证书图片"></a>
@@ -26,6 +26,7 @@
 
                     </div>
                 </div>
+                <div class="ads"></div>
             </Content>
 
             <iFooter></iFooter>
@@ -58,6 +59,7 @@ export default {
   width: 100%;
   margin: 0 auto;
   padding: 40px;
+  position: relative;
 }
 .info-area{
     /* display: flex;
@@ -106,11 +108,23 @@ export default {
     margin:15px 30px; 
 }
 .content{
-    margin-top: 20px;
+    margin-top: 40px;
     padding: 40px 20px;
     border: 1px solid #dcdee2;
     box-shadow: 0 1px 3px rgba(0,0,0,.25);
     border-radius: 4px;
+}
+.ads{
+    right: 85px;
+    top: 90px;
+    margin-top: 20px;
+    padding: 10px 10px;
+    width: 280px;
+    height: 300px;
+    border: 1px solid #dcdee2;
+    box-shadow: 0 1px 3px rgba(0,0,0,.25);
+    border-radius: 4px;
+    position: fixed;
 }
 .clear {
   clear: both;
