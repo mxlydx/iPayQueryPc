@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div>
       <Layout>
         <iHeader></iHeader>
         <div class="clear">
@@ -37,7 +36,6 @@
         </Content>
         <iFooter></iFooter>
       </Layout>
-    </div>
   </div>
 </template>
 <script>
@@ -56,7 +54,9 @@ export default {
   },
   methods:{
     searchK(){
-
+      this.$router.push({
+        path:'company-detail'
+      })
     }
   }
 };
@@ -199,5 +199,8 @@ body {
   font-size: 30px;
   height: 50px;
   margin: 70px 0px 10px 0px;
+}
+.clear {
+  clear: both;
 }
 </style>

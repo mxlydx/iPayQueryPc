@@ -5,9 +5,9 @@
             <span class="logo-text">
               <Icon type="logo-designernews" />&nbsp;&nbsp;支付查</span>
             <div class="layout-nav">
-              <MenuItem>
+              <MenuItem name='navArea'>
                 <Icon type="ios-navigate"></Icon>
-                首页
+                <span>首页</span>
               </MenuItem>
             </div>
           </Menu>
@@ -15,7 +15,7 @@
 </template>
 <script>
 export default {
-    
+    name:'iHeader'
 }
 </script>
 <style scoped>

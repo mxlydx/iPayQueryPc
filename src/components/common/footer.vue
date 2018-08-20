@@ -3,11 +3,9 @@
 </template>
 <script>
 export default {
-    
+    name:'iFooter'
 }
 </script>
 <style>
 .layout-footer-center {
   text-align: center;
-}
-</style>
