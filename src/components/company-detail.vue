@@ -119,8 +119,8 @@ export default {
     top: 90px;
     margin-top: 20px;
     padding: 10px 10px;
-    width: 280px;
-    height: 300px;
+    width: 200px;
+    height: 260px;
     border: 1px solid #dcdee2;
     box-shadow: 0 1px 3px rgba(0,0,0,.25);
     border-radius: 4px;
