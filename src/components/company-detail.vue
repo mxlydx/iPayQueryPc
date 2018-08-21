@@ -23,10 +23,43 @@
                         <div class="clear"></div>
                     </div>
                     <div class="content">
-
+                        <ul>
+                            <li class="content-info-block">
+                                <label>发证日期</label>
+                                <span>2000-10-01</span>
+                            </li>
+                            <li class="content-info-block content-info-center">
+                                <label>到期日期</label>
+                                <span>2020-10-01</span>
+                            </li>
+                            <li class="content-info-block content-info-center">
+                                <label >业务覆盖范围</label>
+                                <span>全国</span>
+                            </li>
+                            <li class="content-info-block content-info-center">
+                                <label>央行公告地址</label>
+                                <span><a href="http://www.baidu.com" target="_blank">GO</a></span>
+                            </li>
+                            <li class="content-info-block content-info-center">
+                                <label>地址</label>
+                                <span>杭州市西湖区万塘路18号广厦黄龙时代中心B栋3-21层</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="evaluation">
+                        <Rate allow-half v-model="valueHalf"  show-text icon="md-star"/>
                     </div>
                 </div>
-                <div class="ads"></div>
+                <div class="ads">
+                    <img src="../assets/qrcode.jpg" class="bar-code" alt="">
+                    <div class="focus-us">
+                        <i class="focus-top-left"></i>
+                        <i class="focus-top-right"></i>
+                        <i class="focus-bottom-left"></i>
+                        <i class="focus-bottom-right"></i>
+                        <p>微信扫一扫关注我们</p>
+                    </div>
+                </div>
             </Content>
 
             <iFooter></iFooter>
@@ -41,6 +74,11 @@ export default {
     components:{
       'iHeader':header,
       'iFooter':footer
+  },
+  data(){
+      return {
+            valueHalf: 4
+          }
   }
 }
 </script>
@@ -109,7 +147,7 @@ export default {
 }
 .content{
     margin-top: 40px;
-    padding: 40px 20px;
+    padding: 20px 20px;
     border: 1px solid #dcdee2;
     box-shadow: 0 1px 3px rgba(0,0,0,.25);
     border-radius: 4px;
@@ -118,15 +156,87 @@ export default {
     right: 85px;
     top: 90px;
     margin-top: 20px;
-    padding: 10px 10px;
+    padding: 20px 10px;
     width: 200px;
     height: 260px;
     border: 1px solid #dcdee2;
     box-shadow: 0 1px 3px rgba(0,0,0,.25);
     border-radius: 4px;
+    text-align: center;
     position: fixed;
+}
+.bar-code{
+    width: 150px;
+    height: 150px;
+}
+.focus-us{
+    position: relative;
+    padding: 10px;
+    margin-top:10px;
+}
+.focus-us i{
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+}
+.focus-us p{
+    color: #B70218;
+}
+.focus-top-left{
+    top: 0;
+    left: 10px;
+    border-top: 1px solid #D8D8D8;
+    border-left: 1px solid #D8D8D8;
+}
+.focus-top-right{
+    top: 0;
+    right: 10px;
+    border-top: 1px solid #D8D8D8;
+    border-right: 1px solid #D8D8D8;
+}
+.focus-bottom-left{
+    bottom: 0;
+    left: 10px;
+    border-left: 1px solid #D8D8D8;
+    border-bottom: 1px solid #D8D8D8;
+}
+.focus-bottom-right{
+    bottom: 0;
+    right: 10px;
+    border-bottom: 1px solid #D8D8D8;
+    border-right: 1px solid #D8D8D8;
+}
+.content ul{
+    margin: 0px 20px;
+}
+.content li{
+    display:block;
+    padding:20px 0px; 
+}
+.content-info-block{
+    font-size: 1.3em;
+    color: #515a6e;
+    position: relative;
+}
+.content-info-center{
+    border-top: 1px dashed #ddd;
+}
+.content-info-block span{
+    right: 0px;
+    position: absolute;
 }
 .clear {
   clear: both;
+}
+.evaluation{
+    margin-top: 40px;
+    padding: 20px 20px;
+    border: 1px solid #dcdee2;
+    box-shadow: 0 1px 3px rgba(0,0,0,.25);
+    border-radius: 4px;
+}
+.ivu-rate{
+    font-size:34px;
 }
 </style>
