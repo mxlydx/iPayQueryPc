@@ -6,6 +6,8 @@ export default {
     name:'iFooter'
 }
 </script>
-<style>
-.layout-footer-center {
+<style scoped>
+.layout-footer-center{
   text-align: center;
+}
+</style>
