@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/index.vue'
 import CompanyDetail from '@/components/company-detail.vue'
+import CommonDetail from '@/components//common/common-detail'
 import Test from '@/components/test.vue'
 
 Vue.use(Router)
@@ -22,6 +23,11 @@ export default new Router({
       path:'/company-detail',
       name:'company-detail',
       component:CompanyDetail
+    },
+    {
+      path:'/common-detail',
+      name:'common-detail',
+      component:CommonDetail
     }
   ]
 })

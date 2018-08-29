@@ -9,5 +9,8 @@ export default {
 <style scoped>
 .layout-footer-center{
   text-align: center;
+  /* position: fixed; */
+  /* bottom: 0px; */
+  /* width: 100%; */
 }
 </style>

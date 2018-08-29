@@ -17,7 +17,7 @@
           <div class="dropdown-list" >
             <div class="dropdown-list-detail">
               <ul>
-                <li>银行卡BIN</li>|
+                <li @click="toDetail('common-detail')">银行卡BIN</li>|
                 <li>开户行联行号</li>|
                 <li>POS机交易应答码</li>|
                 <li>支付牌照</li>|
@@ -56,6 +56,11 @@ export default {
     searchK(){
       this.$router.push({
         path:'company-detail'
+      })
+    },
+    toDetail(router){
+      this.$router.push({
+        path:router
       })
     }
   }
