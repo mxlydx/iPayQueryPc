@@ -2,36 +2,30 @@
   <div>
     <iHeader></iHeader>
     <div class="clear"></div>
-    <Content :style="{padding:'30px 70px 80px'}">
-      <div class="info-area">
-        <div class="content" v-for="item in data.list">
+    <Content :style="{padding:'40px 70px 80px'}">
+      <div class="info-areas">
+        <div class="content" v-model="data.queryResult">
           <ul>
-            <!--                  <li class="content-info-block">-->
-            <!--                    <label>发卡行名称及机构代码</label>-->
-            <!--                    <span>中国银行 (01040000)</span>-->
-            <!--                  </li>-->
-            <!--                  <li class="content-info-block content-info-center">-->
-            <!--                    <label>银行卡名</label>-->
-            <!--                    <span>长城电子借记卡</span>-->
-            <!--                  </li>-->
-            <!--                  <li class="content-info-block content-info-center">-->
-            <!--                    <label>卡号长度</label>-->
-            <!--                    <span>19</span>-->
-            <!--                  </li>-->
-            <!--                  <li class="content-info-block content-info-center">-->
-            <!--                    <label>银行卡全号段样式</label>-->
-            <!--                    <span>601382xxxxxxxxxxxxx</span>-->
-            <!--                  </li>-->
-            <!--                  <li class="content-info-block content-info-center">-->
-            <!--                    <label>卡种</label>-->
-            <!--                    <span>借记卡</span>-->
-            <!--                  </li>-->
-            <li class="content-info-block">
-              <label class="keyword">{{item.key}}</label>
-              <span class="category">{{item.category}}</span>
-<!--              <Tag closable color="blue">{{item.category}}</Tag>-->
-<!--              <Tag type="dot" closable color="blue">标签一</Tag>-->
+            <!--            <li class="content-info-block">-->
+            <!--              <label class="keyword">{{item.key}}</label>-->
+            <!--              <span class="category">{{item.category}}</span>-->
+            <!--            </li>-->
+            <li class="content-info-block content-info-center" v-for="val in data.queryResult.infoArr">
+              <label>{{val.label}}</label>
+              <!--              <span>{{val.text}}</span>-->
+              <span class="detail" v-html="val.text.replace(data.queryResult.key,'<font>'+ data.queryResult.key+'</font>')">
+              </span>
             </li>
+            <li class="content-info-block content-info-center">
+            </li>
+          </ul>
+        </div>
+        <div class="content" v-for="item in data.queryResult.moreList">
+          <ul>
+<!--            <li class="content-info-block">-->
+<!--              <label class="keyword">{{item.key}}</label>-->
+<!--              <span class="category">{{item.category}}</span>-->
+<!--            </li>-->
             <li class="content-info-block content-info-center" v-for="val in item.infoArr">
               <label>{{val.label}}</label>
 <!--              <span>{{val.text}}</span>-->
@@ -70,13 +64,14 @@
   import footer from './footer.vue';
 
   export default {
-    name: 'company-detail',
+    name: 'common-category-detail',
     components: {
       'iHeader': header,
       'iFooter': footer
     },
     data() {
       return {
+
       }
     },
     computed: {
@@ -84,7 +79,6 @@
         get() {
           let that = this;
           let result = eval("("+localStorage.getItem('searchResult')+")");
-          console.log(that.$store.state.data.queryResult);
           if (that.$store.state.data.queryResult){
             return that.$store.state.data;
           } else {
@@ -95,6 +89,7 @@
     },
     methods: {
       toNews(url){
+        console.log(11);
         window.open(url,"_blank");
       }
     },
@@ -143,7 +138,7 @@
     padding: 20px 0px;
   }
 
-  .info-area {
+  .info-areas {
     /* display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -154,7 +149,7 @@
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center; */
-    padding: 60px 20px;
+    padding: 50px 20px;
     width: 80%;
     max-width: 1990px;
     min-width: 890px;
