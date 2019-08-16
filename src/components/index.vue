@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Layout>
+    <Layout v-if="!spin">
       <iHeader></iHeader>
       <div class="clear">
       </div>
@@ -28,7 +28,7 @@
           <Tag type="border" @click.native="hotSearch(item)" :key="index" color="blue" class ="hotKey" v-for="(item, index) in hotKey">{{item}}</Tag>
         </div>
         <div class="ads-box">
-          <img src="../assets/active_banner@2x.62a4495.png"/>
+          <img src="../assets/zhifucha.jpg"/>
         </div>
       </Content>
       <iFooter></iFooter>
@@ -55,7 +55,7 @@
         cate: '关键字',
         router: "common-detail",
         key: "",
-        server: "http://ipayapi.xlman.cn",
+        server: "https://ipayapi.xlman.cn",
         spin: this.$store.state.spin,
         placeholder: '请输入您要查询的关键字...',
         hotKey: ['支付宝','随行付', '拉卡拉', '盒子支付'],
@@ -145,7 +145,15 @@
                 setTimeout(noData, 1500);
                 return;
               }
-              let i = result.queryResult ? result.queryResult.moreList.length + 1 : result.news.length + result.list.length;
+              let i = 0;
+              if (result.queryResult) {
+                i = result.queryResult.moreList.length + 1;
+              } else {
+                i += result.news.length;
+                result.list.forEach( ele => {
+                  i += ele.moreList.length + 1;
+                });
+              }
               const success = that.$Message.success('成功查询到' + i + '条数据', 0);
               try{
                 localStorage.setItem('searchResult',JSON.stringify(result));
@@ -196,10 +204,15 @@
       this.enterKeyup();
     },
     beforeMount() {
+    },
+    mounted() {
       const that = this;
       let catched = eval(this.$store.state.getCookie('hotTips'));
       if (catched) {
         this.hotKey = catched;
+        setTimeout(() => {
+          this.spin = false;
+        }, 500);
       } else {
         const url = this.server + '/hotKeywords?cate=queryHotTips';
         $.ajax({
@@ -212,17 +225,16 @@
             console.log(result);
             that.hotKey = result;
             that.$store.state.setCookie('hotTips',JSON.stringify(result),'m1');
+            that.spin = false;
           },
           error(errorMsg) {
             const msg = this.$Message.warning('网络连接失败', 1);
           }
         });
       }
-    },
-    mounted() {
-      setTimeout(() => {
-        this.spin = false;
-      }, 500);
+      // setTimeout(() => {
+      //   this.spin = false;
+      // }, 500);
     }
   };
 </script>

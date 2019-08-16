@@ -1,16 +1,28 @@
 <template>
-    <Footer class="layout-footer-center">2017-2018 &copy; 山东微融文化传媒有限公司</Footer>
+  <Footer class="layout-footer-center" v-model="data">{{data}} &copy; 山东微融文化传媒有限公司</Footer>
 </template>
 <script>
-export default {
-    name:'iFooter'
-}
+  export default {
+    name: 'iFooter',
+    computed: {
+      data: {
+        get() {
+            let time = new Date();
+            let thisYear = time.getFullYear();
+            let lastYear = thisYear - 1;
+            return lastYear + "-" + thisYear;
+        }
+      }
+    },
+    methods: {
+    }
+  }
 </script>
 <style scoped>
-.layout-footer-center{
-   text-align: center;
-   position: fixed;
-   bottom: 0px;
-   width: 100%;
-}
+  .layout-footer-center {
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+  }
 </style>

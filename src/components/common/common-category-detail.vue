@@ -15,6 +15,7 @@
               <!--              <span>{{val.text}}</span>-->
               <span class="detail" v-html="val.text.replace(data.queryResult.key,'<font>'+ data.queryResult.key+'</font>')">
               </span>
+              <div class="clear"></div>
             </li>
             <li class="content-info-block content-info-center">
             </li>
@@ -31,6 +32,7 @@
 <!--              <span>{{val.text}}</span>-->
               <span class="detail" v-html="val.text.replace(item.key,'<font>'+ item.key+'</font>')">
               </span>
+              <div class="clear"></div>
             </li>
             <li class="content-info-block content-info-center">
             </li>
@@ -119,8 +121,7 @@
   }
 
   .content-info-block span {
-    right: 0px;
-    position: absolute;
+   float:right;
   }
 
   .category {
@@ -228,7 +229,10 @@
     color: #B70218;
   }
   .detail {
-    margin-left:  80px;
+    margin-left: 30px;
+    line-height: 1.2;
+    display: inline-block;
+    text-overflow: ellipsis;
   }
   .news {
     padding: 5px;

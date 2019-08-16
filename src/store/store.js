@@ -1,10 +1,11 @@
 import Vue from 'vue';
 import Vuex from 'vuex'
+import $ from 'jquery';
 Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
     data: {},
-    spin: false,
+    spin: true,
     getsec(str){
       let str1=str.substring(1,str.length)*1;
       let str2=str.substring(0,1);
@@ -56,6 +57,8 @@ const store = new Vuex.Store({
     spin(state, data) {
       state.spin = data;
     }
+  },
+  actions:{
   }
 });
 export default store;

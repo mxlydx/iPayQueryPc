@@ -7,7 +7,7 @@
       <Content :style="{padding:'70px 70px'}">
         <div class="info-areas" v-model="data.queryResult">
           <div class="title">
-            <a href=""><img src="../assets/timg.jpg" class="licenseImg" alt="证书图片"></a>
+            <a href=""><img src="../assets/time.png" class="licenseImg" alt="证书图片"></a>
             <div class="simple-info">
               <h1>{{data.queryResult.keyword}}</h1>
               <div class="info-arr">
@@ -90,7 +90,7 @@
         </div>
         <div class="info-areas" v-for="info in data.queryResult.moreList">
           <div class="title">
-            <a href=""><img src="../assets/timg.jpg" class="licenseImg" alt="证书图片"></a>
+            <a href=""><img src="../assets/time.png" class="licenseImg" alt="证书图片"></a>
             <div class="simple-info">
               <h1>{{info.keyword}}</h1>
               <div class="info-arr">
