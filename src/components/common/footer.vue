@@ -1,5 +1,5 @@
 <template>
-  <Footer class="layout-footer-center" v-model="data">{{data}} &copy; 山东微融文化传媒有限公司</Footer>
+  <Footer class="layout-footer-center" v-model="data">{{data}} &copy; 山东微融文化传媒有限公司❤️</Footer>
 </template>
 <script>
   export default {

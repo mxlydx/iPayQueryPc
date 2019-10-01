@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "github-webhook-handler": "^1.0.0",
     "iview": "^3.0.0",
     "jquery": "^3.4.1",
     "mockjs": "^1.0.1-beta3",
