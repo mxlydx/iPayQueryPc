@@ -1,6 +1,6 @@
  #!/bin/bash
 
-WEB_PATH='/data/ci/iPayQueryPc'$1
+WEB_PATH ='/data/ci/iPayQueryPc'
 TARGET = '/opt/apps/zhifucha.cn/iPayQueryPc/dist'
 DIST = '/opt/apps/zhifucha.cn/iPayQueryPc/'
 echo "Start deployment"
@@ -13,5 +13,5 @@ git checkout master
 npm run install
 npm run build
 rm -rf $TARGET
-cp -r $WEB_PATH"/dist/" $TARGET
+cp -r "$WEB_PATH/dist/" $DIST
 echo "Finished."
